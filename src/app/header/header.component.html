@@ -21,17 +21,29 @@
       </li>
     </ul>
     <div *ngIf="!isloggedin">
-      <button  class="btn" type="submit" routerLink="/signup">Signup</button>
-      <button class="btn" type="submit" routerLink="/login">Login</button>
+      <div class="dropdown show">
+
+        <a class="btn btn-primary dropdown-toggle"  href="#" role="button"  data-bs-toggle="dropdown" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+          Profile
+
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+          <a class="dropdown-item" href="#">My Profile</a>
+
+          <a class="dropdown-item" href="#">Setting</a>
+
+          <a class="dropdown-item" href="#">Logout </a>
+
+        </div>
+
+      </div>
 
 
     </div>
-    <div *ngIf="isloggedin">
-      <button class="btn" type="submit" routerLink="/cart">Cart</button>
-      <button class="btn" type="submit" (click)="logout()">Logout</button>
 
-
-    </div>
 
   </div>
 </nav>
