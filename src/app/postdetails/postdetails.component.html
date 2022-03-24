@@ -14,4 +14,23 @@
 
     </div>
   </div>
+  <div class="container" *ngIf="comments" style="margin-top:25px;">
+    <div class="row" *ngFor="let comment of comments  " style=" border: 1px solid black;">
+      <div class="col">
+        <div>
+          <img src="/assets/user.png">
+          <p *ngIf="postedBy">{{comment.commentedBy.firstName+" "+comment.commentedBy.middleName+" "+comment.commentedBy.lastName}}</p>
+        </div>
+
+
+      </div>
+      <div class="col-6">
+        <p>{{comment.comment}}</p>
+        <p>{{comment.likesCount}}  Likes</p>
+
+
+      </div>
+
+    </div>
+  </div>
 </div>
