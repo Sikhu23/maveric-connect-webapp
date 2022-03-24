@@ -1,0 +1,17 @@
+<div class="card" style="width: 100%; height: 10rem; border: 1px solid black;">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div>
+          <img src="/assets/user.png">
+        </div>
+        <p *ngIf="postedBy">{{postedBy.firstName+" "+postedBy.middleName+" "+postedBy.lastName}}</p>
+      </div>
+      <div class="col-6">
+        <h3 *ngIf="post">{{post.post}}</h3>
+
+      </div>
+
+    </div>
+  </div>
+</div>
