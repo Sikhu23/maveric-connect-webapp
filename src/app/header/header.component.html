@@ -21,14 +21,14 @@
       </li>
     </ul>
     <div *ngIf="!isloggedin">
-      <button class="btn btn-outline-success" type="submit" routerLink="/signup">Signup</button>
-      <button class="btn btn-outline-success" type="submit" routerLink="/login">Login</button>
+      <button  class="btn" type="submit" routerLink="/signup">Signup</button>
+      <button class="btn" type="submit" routerLink="/login">Login</button>
 
 
     </div>
     <div *ngIf="isloggedin">
-      <button class="btn btn-outline-warning" type="submit" routerLink="/cart">Cart</button>
-      <button class="btn btn-outline-danger" type="submit" (click)="logout()">Logout</button>
+      <button class="btn" type="submit" routerLink="/cart">Cart</button>
+      <button class="btn" type="submit" (click)="logout()">Logout</button>
 
 
     </div>
