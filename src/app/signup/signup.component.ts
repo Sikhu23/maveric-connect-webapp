@@ -1,3 +1,4 @@
+import { AppserviceService } from './../appservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,8 +13,9 @@ export class SignupComponent implements OnInit {
   email:any
   password:any
   cpassword:any
+  successMsg:any
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private service:AppserviceService) { }
 
   ngOnInit(): void {
   }
@@ -35,11 +37,12 @@ export class SignupComponent implements OnInit {
 
         "password":this.password
           }
-          let url="http://localhost:3000/auth/signup"
 
-          this.http.post(url,body).subscribe((response:any)=>{
+
+          this.service.authsignup(body).subscribe((response:any)=>{
             console.log(response);
             localStorage.token1=response.jwtToken;
+            this.successMsg="User Created Successfully ... Proceed with Login !!!"
           })
     }
     else{

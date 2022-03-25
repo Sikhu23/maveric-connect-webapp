@@ -1,3 +1,4 @@
+import { AppserviceService } from './../appservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 postArray:[];
-  constructor(private http:HttpClient) {
-    let url="http://localhost:8000/posts";
-    this.http.get(url).subscribe((response:any)=>{
+  constructor(private http:HttpClient,private service:AppserviceService) {
+
+    this.service.getposts().subscribe((response:any)=>{
       console.log(response)
       this.postArray=response;
     })
