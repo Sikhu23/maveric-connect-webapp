@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img class="navbar-brand" src="/assets/maveric-logo-updated.png" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; width: 100%;top: 0; z-index: 5;">
+  <img class="navbar-brand" src="/assets/maveric-logo-updated.png" routerLink="/posts"/>
   <button
     class="navbar-toggler"
     type="button"
@@ -16,11 +16,11 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#"
-          ><h3>Maveric Connect</h3> <span class="sr-only">(current)</span></a
+          ><h3 style="color:#214e8f ;">Maveric Connect</h3> <span class="sr-only">(current)</span></a
         >
       </li>
     </ul>
-    <div *ngIf="!isloggedin">
+    <div *ngIf="isloggedin">
       <div class="dropdown show">
 
         <a class="btn btn-primary dropdown-toggle"  href="#" role="button"  data-bs-toggle="dropdown" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +35,7 @@
 
           <a class="dropdown-item" href="#">Setting</a>
 
-          <a class="dropdown-item" href="#">Logout </a>
+          <a class="dropdown-item" href="#" (click)="logout()">Logout </a>
 
         </div>
 

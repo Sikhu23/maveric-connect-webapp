@@ -17,8 +17,7 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { PostsComponent } from './posts/posts.component';
 
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 
 

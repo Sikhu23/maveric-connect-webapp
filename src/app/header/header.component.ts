@@ -12,5 +12,18 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ngDoCheck(){
+    if(localStorage.token){
+      this.isloggedin=true
+
+    }
+    else{
+      this.isloggedin=false
+    }
+  }
+
+  logout(){
+    localStorage.clear()
+  }
 
 }

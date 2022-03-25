@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+   headers =new HttpHeaders();
   constructor(private http:HttpClient ) { }
 
   ngOnInit(): void {
@@ -18,44 +19,35 @@ export class LoginComponent implements OnInit {
 
 
   login(){
-    let body={
-      email:this.user.email,
-      password:this.user.password
-    }
-
-    let body1={
-      "firstName": "Fourth",
-      "lastName": "Test",
-      "middleName": "User",
-      "phoneNumber": "7894561230",
-      "email": "fourthyyyy@example.com",
-      "address": "pune",
-      "dateOfBirth": "2022-03-21",
-      "employeeNumber": "564",
-      "bloodGroup": "A_POS",
-      "gender": "MALE",
-      "martialStatus":"Bachelor",
-      "password":"789"
-    }
-
-    let headers =new HttpHeaders();
-    headers.append('Access-Control-Allow-Headers', 'Content-Type');
-    headers.append('Access-Control-Allow-Methods', 'POST');
-    headers.append('Access-Control-Allow-Origin', '*');
 
 
-    console.log("Hello")
-    console.log({...body});
-    let url="http://localhost:8000/auth/login";
+
+
+
+    // let url="http://localhost:8000/auth/login";
+    let url="http://localhost:8000/users/getUserByEmail/"+this.user.email
     // let url ="http://localhost:8000/posts";
     // let url="https://apifromashu.herokuapp.com/api/login";
 
-    this.http.post(url,body,{
-      headers:headers
-    }).subscribe((response:any)=>{
+    // this.http.post(url,body,{
+    //   headers:this.headers
+    // }).subscribe((response:any)=>{
 
-      console.log(response)
-    },(error)=>alert('Login erro'))
+    //   console.log(response)
+    //   localStorage.token=localStorage.token1
+    // },(error)=>alert('Login erro'))
+
+    this.http.get(url).subscribe((response:any)=>{
+      console.log(response);
+      if(response.userID){
+        if(this.user.password===response.password){
+          localStorage.token=localStorage.token1
+        }
+        else{
+          alert("Password is incorrect")
+        }
+      }
+    })
 
 
   }

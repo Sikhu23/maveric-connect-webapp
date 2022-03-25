@@ -1,3 +1,16 @@
-.footer{
+footer {
   background-color: #214e8f;
+  font-family: Roboto;
+  margin-top: 1rem;
+  color: white;
+
+  width:100%;
+  border: 1px solid black;
+}
+.text{
+  font-family: Roboto;
+  color:white;
+  font-weight: 600;
+  margin-left: 1rem;
+  display: flex;
 }
