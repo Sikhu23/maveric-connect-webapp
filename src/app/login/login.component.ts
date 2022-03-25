@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AppserviceService } from './../appservice.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
    headers =new HttpHeaders();
-  constructor(private http:HttpClient , private service:AppserviceService) { }
+  constructor(private http:HttpClient , private service:AppserviceService, private route:Router) { }
   successMsg:any;
 
   ngOnInit(): void {
@@ -43,6 +44,7 @@ export class LoginComponent implements OnInit {
         if(this.user.password===response.password){
           localStorage.token=localStorage.token1
           this.successMsg="Logged IN SuccessFully !!!"
+          this.route.navigate(["/posts"]);
 
         }
         else{
