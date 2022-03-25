@@ -22,19 +22,22 @@ import { LoginComponent } from './login/login.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
 
     FooterComponent,
+    PostdetailsComponent,
 
 
     SignupComponent,
 
     HeaderComponent,
-    PostdetailsComponent,
+
     PostsComponent,
-    LoginComponent
+    LoginComponent,
+
 
 
   ],

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
 
     // let url="http://localhost:8000/auth/login";
-    let url="http://localhost:8000/users/getUserByEmail/"+this.user.email
+    // let url="http://localhost:8000/users/getUserByEmail/"+this.user.email
     // let url ="http://localhost:8000/posts";
     // let url="https://apifromashu.herokuapp.com/api/login";
 

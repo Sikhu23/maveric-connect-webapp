@@ -6,7 +6,7 @@ img{
 .counts{
   display: flex;
   flex-direction: column;
-  justify-self: end;
-  align-items: end;
+  justify-self: flex-end;
+  align-items: flex-end;
 
 }

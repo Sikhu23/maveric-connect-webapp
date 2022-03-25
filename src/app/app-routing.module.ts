@@ -12,8 +12,14 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
 
 
+
   {path:'posts',canActivate:[SecurityService],component:PostsComponent},
   {path:'post-details/:id',canActivate:[SecurityService],component:PostdetailsComponent},
+  {
+    path: '**', canActivate:[SecurityService],
+    loadChildren: () => import('./lazyload/lazyload.module')
+    .then(m => m.LazyloadModule)
+ },
 
 ];
 
