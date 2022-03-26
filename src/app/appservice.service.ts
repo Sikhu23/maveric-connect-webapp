@@ -21,8 +21,8 @@ export class AppserviceService {
     return this.http.get(url)
    }
 
-   getposts(){
-    let url="http://localhost:8000/posts";
+   getposts(page:any){
+    let url="http://localhost:8000/posts?page="+page;
     return this.http.get(url);
    }
 

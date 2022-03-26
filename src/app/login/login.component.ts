@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         if(this.user.password===response.password){
           localStorage.token=localStorage.token1
           this.successMsg="Logged IN SuccessFully !!!"
-          this.route.navigate(["/posts"]);
+          this.route.navigate(["/posts"],{queryParams:{page:1}});
 
         }
         else{
