@@ -40,14 +40,12 @@ export class SignupComponent implements OnInit {
 
 
           this.service.authsignup(body).subscribe((response:any)=>{
-            console.log(response);
+
             localStorage.token1=response.jwtToken;
             this.successMsg="User Created Successfully ... Proceed with Login !!!"
           })
     }
-    else{
-      alert("Please check yur password")
-    }
+    
 
 
 
