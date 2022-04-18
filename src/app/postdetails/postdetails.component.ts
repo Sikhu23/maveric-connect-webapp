@@ -17,24 +17,20 @@ export class PostdetailsComponent implements OnInit {
   constructor(private http : HttpClient,private router:ActivatedRoute,private service:AppserviceService) {
 
     this.id=this.router.snapshot.params['id']
-    console.log(this.id)
+
 
 
     this.service.getpostdetails(this.id).subscribe((response:any)=>{
-      console.log("1 call "+response)
+
       this.post=response
       this.postedBy=response.postedBy;
-    },(error)=>{
-      console.log("post not found")
     })
 
 
     this.service.getcommentsonposts(this.id).subscribe((response:any)=>{
-      console.log("2nd resoonse"+response)
+
       this.comments=response
 
-    },(error)=>{
-      console.log("Comments not found")
     })
   }
 

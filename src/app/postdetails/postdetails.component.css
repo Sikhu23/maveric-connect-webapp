@@ -2,3 +2,12 @@ img{
   height: 100px;
   width: 100px;
 }
+
+#container
+{
+  margin-top: 6%; margin-bottom: 10%;
+}
+
+#row{
+  border: 1px solid black
+}

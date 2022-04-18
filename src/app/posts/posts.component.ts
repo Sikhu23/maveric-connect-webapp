@@ -23,21 +23,18 @@ page:any=1;
         else{
           pageres=response.page;
         }
-        console.log("response is "+response.page)
+       
 
         this.page=pageres
         console.log("page is "+pageres)
         this.service.getposts(pageres).subscribe((response:any)=>{
           this.postArray=response
-          console.log(response)
+
 
         })
       })
 
-    // this.service.getposts().subscribe((response:any)=>{
-    //   console.log(response)
-    //   this.postArray=response;
-    // })
+
 
    }
 
@@ -50,7 +47,7 @@ page:any=1;
 
     if(this.page){
       this.router.navigate(['/posts'],{queryParams:{page:this.page}})
-      console.log(this.page)
+
      }
 
 
@@ -60,7 +57,7 @@ page:any=1;
 
     if(this.page){
       this.router.navigate(['/posts'],{queryParams:{page:this.page}})
-      console.log(this.page)
+
      }
 
   }

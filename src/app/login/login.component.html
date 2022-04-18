@@ -1,4 +1,4 @@
-<div style="height: 60%; width: 60%; margin-left: 10%; margin-top: 11%; margin-bottom: 9%;">
+<div id="mainbody">
   <form (submit)="login()">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -15,5 +15,5 @@
     <p><a href="#">Forgot Password</a></p>
   </form>
 
-  <h5 *ngIf="successMsg" style="color: green;">{{successMsg}}</h5>
+  <p *ngIf="successMsg" style="color: green;">{{successMsg}}</p>
 </div>

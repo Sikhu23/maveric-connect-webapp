@@ -10,36 +10,41 @@ export class AppserviceService {
 
 
    }
+   loginurl="http://localhost:8000/users/getUserByEmail/";
+   getpostsurl="http://localhost:8000/posts?page=";
+   getpostdetailsurl="http://localhost:3010/posts/"
+   getcommentsonpostsurl="http://localhost:8000/posts/";
+   authsignupurl="http://localhost:3000/auth/signup";
 
 
    login(user:any){
 
 
-    let url="http://localhost:8000/users/getUserByEmail/"+user.email
+    let url=this.loginurl+user.email
 
 
     return this.http.get(url)
    }
 
    getposts(page:any){
-    let url="http://localhost:8000/posts?page="+page;
+    let url=this.getpostsurl+page;
     return this.http.get(url);
    }
 
    getpostdetails(id:any){
-    let url= "http://localhost:3010/posts/"+id;
+    let url= this.getpostdetailsurl+id;
     return this.http.get(url)
 
    }
 
 
    getcommentsonposts(id:any){
-    let url="http://localhost:8000/posts/"+id+"/comments"
+    let url=this.getcommentsonpostsurl+id+"/comments"
     return this.http.get(url)
    }
 
    authsignup(body:any){
-    let url="http://localhost:3000/auth/signup"
+    let url=this.authsignupurl;
     return this.http.post(url,body);
    }
 }
