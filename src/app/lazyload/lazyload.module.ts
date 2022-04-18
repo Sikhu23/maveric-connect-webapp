@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from '../error/error.component';
-// import { PostdetailsComponent } from '../postdetails/postdetails.component';
 import { PostdetailsComponent } from '../postdetails/postdetails.component';
 
 import { PostsComponent } from '../posts/posts.component';
