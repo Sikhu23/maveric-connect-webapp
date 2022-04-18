@@ -1,0 +1,16 @@
+.header{
+  background-color: #214e8f;
+}
+button{
+  background-color: #214e8f;
+  margin-left: 10px;
+
+}
+
+#navId{
+  position: fixed; width: 100%;top: 0; z-index: 5;
+}
+
+h3{
+  color:#214e8f
+}

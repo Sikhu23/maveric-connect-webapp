@@ -1,0 +1,12 @@
+button{
+  background-color: #214e8f;
+}
+
+
+#mainbody{
+  height: 60%; width: 60%; margin-left: 10%; margin-top: 11%; margin-bottom: 9%;
+}
+
+#successMsg{
+  color: green
+}

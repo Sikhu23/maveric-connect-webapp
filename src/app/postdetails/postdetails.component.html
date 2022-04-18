@@ -1,0 +1,51 @@
+<div class="container" id="container">
+  <div class="card">
+
+      <div class="row">
+        <div class="col">
+          <div>
+            <img src="/assets/user.png" />
+          </div>
+          <p *ngIf="postedBy">
+            {{
+              postedBy.firstName +
+                " " +
+                postedBy.middleName +
+                " " +
+                postedBy.lastName
+            }}
+          </p>
+        </div>
+        <div class="col-6">
+          <h3 *ngIf="post">{{ post.post }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="container" *ngIf="comments" id="ïnnerContainer">
+      <div
+        class="row"
+        *ngFor="let comment of comments"
+        id="row"
+
+      >
+        <div class="col">
+          <div>
+            <img src="/assets/user.png" />
+            <p *ngIf="postedBy">
+              {{
+                comment.commentedBy.firstName +
+                  " " +
+                  comment.commentedBy.middleName +
+                  " " +
+                  comment.commentedBy.lastName
+              }}
+            </p>
+          </div>
+        </div>
+        <div class="col-6">
+          <p>{{ comment.comment }}</p>
+          <p>{{ comment.likesCount }} Likes</p>
+        </div>
+      </div>
+    </div>
+  </div>
